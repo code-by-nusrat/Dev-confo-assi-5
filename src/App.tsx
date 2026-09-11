@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import Banner from './Components/Banner'
 import Navbar from './Components/Navbar'
 import Techs from './Components/Technologies/Techs'
@@ -13,6 +13,7 @@ const techsPromise =async():Promise<TechType[]>=>{
 }
 function App() {
  //console.log(techsPromise)
+//  const [count,setCount]=useState()
   return (
     <>
       <Navbar></Navbar>

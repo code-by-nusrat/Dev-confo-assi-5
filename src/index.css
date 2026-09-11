@@ -26,6 +26,21 @@ nav{
       height: 100%;
       margin-bottom: 11px;
    }
+   .card-container{
+      width:100%;
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      margin: 0 auto;
+   }
+   .all-tech{
+      width: 100%;
+   }
+   .cards{
+      width: 50%;
+   }
+   .card{
+      padding: 10px 110px ;
+   }
 }
 @media screen and (max-width: 768px) {
    nav{

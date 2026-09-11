@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { TechType } from "../TechType";
 import { FaStar } from "react-icons/fa";
 
@@ -5,13 +6,15 @@ interface TechCardProps {
     tech: TechType;
 }
 
-const TechCard = ({tech}:TechCardProps ) => {
+const TechCard = ({ tech }: TechCardProps) => {
+    const [isSelected, setIsSelected] = useState(false);
+    console.log(isSelected, setIsSelected)
     return (
-        <div className="inter">
-            <div className="card border border-[#F1F5F9] w-[288px] h-[257px]">
+        <div className="inter card">
+            <div className=" border border-[#F1F5F9] w-[288px] h-[257px] rounded-[9px]">
                 <div className="flex justify-between items-center p-4 ">
-                  <img className="w-[30px] h-[30px]" src={tech.icon} alt="" />
-                  <button className=" text-[#0EA5E9] border rounded-[30px] w-[77px] bg-blue-50 text-[1rem] font-semibold">{tech.badge}</button>
+                    <img className="w-[30px] h-[30px]" src={tech.icon} alt="" />
+                    <button className=" text-[#0EA5E9] border rounded-[30px] w-[77px] bg-blue-50 text-[1rem] font-semibold">{tech.badge}</button>
                 </div>
                 <h3 className="font-bold text-[1.1rem] pl-4">{tech.name}</h3>
                 <p className="text-[12px] font-[400px] text-[#64748B] pl-4">{tech.description}</p>
@@ -23,7 +26,8 @@ const TechCard = ({tech}:TechCardProps ) => {
                         <p className="font-medium text-[11px] text-[#334155]">{tech.rating}</p>
                     </div>
                 </div>
-                <button className="w-[246px] h-[36px] bg-black text-[white] rounded-[8px] mx-auto mt-4">Add to Stack</button>
+                <button onClick={() => setIsSelected(true)} disabled={isSelected}
+                    className={`w-[246px] h-[36px] bg-black text-[white] rounded-[8px] ml-5 ${isSelected ? "bg-blue-300" : "bg-black"}`}>{isSelected === true ? "Selected" : "Add to Stack"}</button>
             </div>
         </div>
     );
