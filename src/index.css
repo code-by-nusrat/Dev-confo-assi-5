@@ -2,7 +2,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-.body{
+.inter{
    font-family: "Inter", sans-serif;
 }
 
@@ -24,6 +24,7 @@ nav{
    .banner-content{
       width: 100%;
       height: 100%;
+      margin-bottom: 11px;
    }
 }
 @media screen and (max-width: 768px) {
@@ -34,9 +35,11 @@ nav{
    .banner{
       width: 100%;
       flex-direction: column;
+      padding:0 15px 0 15px;
    }
    .banner-content{
       width: 100%;
       height: 100%;
+      margin-bottom: 11px;
    }
 }

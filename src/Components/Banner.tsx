@@ -2,7 +2,7 @@ import bannerPic from '../assets/banner-stack.png'
 
 const Banner = () => {
     return (
-        <section className='banner w-[1216px] mx-auto flex justify-between items-center mt-[96px]'>
+        <section className='inter banner w-[1216px] mx-auto flex justify-between items-center mt-[96px]'>
             <div className="banner-content w-[696px] h-[420px]">
                 <h1 className='font-extrabold text-[3.8rem]'>Build Your Ideal <br /> <span className='bg-gradient-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent'>Development Stack</span></h1>
                 <p className='text-[1.1rem] font-normal text-[#475569]'>Explore frontend, backend, database, and tooling options, <br />
@@ -14,7 +14,7 @@ const Banner = () => {
                    </div>
             </div>
             <div>
-               <img className='mx-auto w-[488px] h-[420px] border border-amber-100' src={bannerPic} alt="" />
+               <img className='mx-auto w-[488px] h-[420px]' src={bannerPic} alt="" />
             </div>
         </section>
     );

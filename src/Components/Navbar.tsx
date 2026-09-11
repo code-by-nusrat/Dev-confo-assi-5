@@ -4,7 +4,7 @@ import { IoMenuSharp } from "react-icons/io5";
 
 const Navbar = () => {
     return (
-        <nav className='w-full body flex justify-between items-center'>
+        <nav className='inter w-full body flex justify-between items-center'>
             <div className='flex items-center gap-34'>
                 <button className="md:hidden">
                     <IoMenuSharp className='text-3xl' />
