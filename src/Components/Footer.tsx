@@ -58,11 +58,11 @@ const Footer = () => {
 
             {/* Main Footer */}
             <div className="footer0 inter w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-0 py-10
-                            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20">
 
                 {/* Logo & Description */}
-                <div className="sm:col-span-2 lg:col-span-1 text-center">
-                    <img className='mx-auto' src={Footerlogo} alt="Dev Stack" />
+                <div className="sm:col-span-2 lg:col-span-1">
+                    <img src={Footerlogo} alt="Dev Stack" />
 
                     <p className="text-[#64748B] font-normal mt-3 text-sm leading-6">
                         Curated tools, technologies, and resources for developers building
@@ -75,8 +75,6 @@ const Footer = () => {
                         <p>LinkedIn</p>
                     </div>
                 </div>
-
-                {/* Product */}
                 <div className="footer1 hidden lg:block">
                     <h3 className="text-base font-semibold">PRODUCT</h3>
 
@@ -84,8 +82,6 @@ const Footer = () => {
                     <p className="text-sm text-[#64748B] mt-2.5">Technologies</p>
                     <p className="text-sm text-[#64748B] mt-2.5">Projects</p>
                 </div>
-
-                {/* Company */}
                 <div className="footer2 hidden lg:block">
                     <h3 className="text-base font-semibold">COMPANY</h3>
 
@@ -93,8 +89,6 @@ const Footer = () => {
                     <p className="text-sm text-[#64748B] mt-2.5">Contact</p>
                     <p className="text-sm text-[#64748B] mt-2.5">Careers</p>
                 </div>
-
-                {/* Legal */}
                 <div className="footer3 hidden lg:block">
                     <h3 className="text-base font-semibold">LEGAL</h3>
 
