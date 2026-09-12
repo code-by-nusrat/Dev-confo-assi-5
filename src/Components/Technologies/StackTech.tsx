@@ -27,9 +27,7 @@ const StackTech = ({ selectedTech, setSelectedTech, count, setCount }: SelectedT
                     <StackTechCard
                         key={tech.id}
                         tech={tech}
-                        selectedTech={selectedTech}
                         setSelectedTech={setSelectedTech}
-                        count={count}
                         setCount={setCount}
                     />
                 ))}

@@ -4,12 +4,11 @@ import TechCard from "./TechCard";
 
 interface AvailableTechProps{
     techs:TechType[],
-    count:number,
     setCount:Dispatch<SetStateAction<number>>,
     selectedTech:TechType[]
     setSelectedTech:Dispatch<SetStateAction<TechType[]>>
 }
-const AvailableTech = ({ techs,selectedTech,setSelectedTech,count,setCount}:AvailableTechProps) => {
+const AvailableTech = ({ techs,selectedTech,setSelectedTech,setCount}:AvailableTechProps) => {
     //console.log(techs, 'techs from available techs')
     //console.log(count,setCount, 'from available players')
     return (
@@ -19,7 +18,7 @@ const AvailableTech = ({ techs,selectedTech,setSelectedTech,count,setCount}:Avai
                 techs.map((tech:TechType) => {
                     return<div key={tech.id}> 
                         
-                        <TechCard count={count} setCount={setCount} selectedTech={selectedTech} setSelectedTech={setSelectedTech}  tech={tech}></TechCard>
+                        <TechCard setCount={setCount} selectedTech={selectedTech} setSelectedTech={setSelectedTech}  tech={tech}></TechCard>
                     </div>
                    
                 })

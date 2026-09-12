@@ -6,12 +6,12 @@ interface TechCardProps {
     tech: TechType;
     selectedTech: TechType[]
     setSelectedTech: Dispatch<SetStateAction<TechType[]>>,
-    count: number,
+    // count: number,
     setCount: Dispatch<SetStateAction<number>>
     //  Dispatch<SetStateAction<object[]>>
 }
 
-const TechCard = ({ tech, selectedTech, setSelectedTech, count, setCount }: TechCardProps) => {
+const TechCard = ({ tech, selectedTech, setSelectedTech, setCount }: TechCardProps) => {
     const isSelected = selectedTech.some((item) => item.id === tech.id);
 
     const handleSelectCart = () => {

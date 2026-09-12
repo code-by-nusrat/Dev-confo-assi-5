@@ -3,12 +3,12 @@ import { IoIosClose } from "react-icons/io";
 import type { TechType } from '../TechType';
 interface StackTechCardProp {
     tech: TechType;
-    selectedTech: TechType[],
+    // selectedTech: TechType[],
     setSelectedTech: Dispatch<SetStateAction<TechType[]>>,
-    count: number,
+    // count: number,
     setCount: Dispatch<SetStateAction<number>>
 }
-const StackTechCard = ({ tech,selectedTech,setSelectedTech,setCount,count }: StackTechCardProp) => {
+const StackTechCard = ({ tech,setSelectedTech,setCount }: StackTechCardProp) => {
     const handleRemovePlayer = (techToRemove: TechType) => {
         setSelectedTech((prev) => prev.filter((item) => item.id !== techToRemove.id));
         setCount((prev) => Math.max(0, prev - 1));
