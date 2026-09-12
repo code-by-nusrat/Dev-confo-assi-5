@@ -1,33 +1,46 @@
-import { useState } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import type { TechType } from "../TechType";
 import { FaStar } from "react-icons/fa";
-
+import { toast } from "react-toastify";
 interface TechCardProps {
     tech: TechType;
+    selectedTech: object[]
+    setSelectedTech: Dispatch<SetStateAction<object[]>>,
+    count: number,
+    setCount: Dispatch<SetStateAction<number>>
+    //  Dispatch<SetStateAction<object[]>>
 }
 
-const TechCard = ({ tech }: TechCardProps) => {
+const TechCard = ({ tech, selectedTech, setSelectedTech, count, setCount }: TechCardProps) => {
     const [isSelected, setIsSelected] = useState(false);
-    console.log(isSelected, setIsSelected)
+    //console.log(isSelected, setIsSelected)
+    const handleSelectCart = () => {
+        setIsSelected(true)
+        setCount(count + 1)
+        toast.success(`${tech.name} added to your stack!`);
+    }
     return (
         <div className="inter card">
-            <div className=" border border-[#F1F5F9] w-[288px] h-[257px] rounded-[9px]">
+            <div className={` border border-[#F1F5F9] w-[288px] h-64.25 rounded-[9px]  ${isSelected
+                    ? "border-blue-500"
+                    : "border-gray-200"
+                }`}>
                 <div className="flex justify-between items-center p-4 ">
-                    <img className="w-[30px] h-[30px]" src={tech.icon} alt="" />
-                    <button className=" text-[#0EA5E9] border rounded-[30px] w-[77px] bg-blue-50 text-[1rem] font-semibold">{tech.badge}</button>
+                    <img className="w-7.5 h-7.5" src={tech.icon} alt="" />
+                    <button className=" text-[#0EA5E9] border rounded-[30px] w-19.25 bg-blue-50 text-[1rem] font-semibold">{tech.badge}</button>
                 </div>
                 <h3 className="font-bold text-[1.1rem] pl-4">{tech.name}</h3>
                 <p className="text-[12px] font-[400px] text-[#64748B] pl-4">{tech.description}</p>
                 <div className="flex justify-between items-center p-4">
-                    <button className="font-medium text-[11px] text-[#334155] w-[70px] bg-[#f1f5f9] rounded-[12px] h-[20px]">{tech.category}</button>
+                    <button className="font-medium text-[11px] text-[#334155] w-17.5 bg-[#f1f5f9] rounded-xl h-5">{tech.category}</button>
                     <p className="font-medium text-[11px] text-[#334155]">{tech.difficulty}</p>
                     <div className="flex gap-2 text-[12px] text-[#FFD700]">
                         <FaStar />
                         <p className="font-medium text-[11px] text-[#334155]">{tech.rating}</p>
                     </div>
                 </div>
-                <button onClick={() => setIsSelected(true)} disabled={isSelected}
-                    className={`w-[246px] h-[36px] bg-black text-[white] rounded-[8px] ml-5 ${isSelected ? "bg-blue-300" : "bg-black"}`}>{isSelected === true ? "Selected" : "Add to Stack"}</button>
+                <button onClick={() => handleSelectCart()} disabled={isSelected}
+                    className={`w-61.5 h-9 bg-black text-[white] rounded-lg ml-5 ${isSelected ? "bg-blue-300 border" : "bg-black"}`}>{isSelected === true ? "Selected" : "Add to Stack"}</button>
             </div>
         </div>
     );

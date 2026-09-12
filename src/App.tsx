@@ -13,7 +13,7 @@ const techsPromise =async():Promise<TechType[]>=>{
 }
 function App() {
  //console.log(techsPromise)
-//  const [count,setCount]=useState()
+
   return (
     <>
       <Navbar></Navbar>
