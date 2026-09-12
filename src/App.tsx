@@ -7,20 +7,20 @@ import type { TechType } from './Components/TechType'
 import Footer from './Components/Footer'
 
 
-const techsPromise =async():Promise<TechType[]>=>{
+const techsFetch =async():Promise<TechType[]>=>{
   const res = await fetch("/data.json")
   const data =await res.json()
   return data;
 }
 function App() {
  //console.log(techsPromise)
-
+const [techsPromise] = useState(()=>techsFetch())
   return (
     <>
       <Navbar></Navbar>
       <Banner></Banner>
       <Suspense fallback={<h2>Loading...</h2>}>
-      <Techs techsPromise={techsPromise()}></Techs>
+      <Techs techsPromise={techsPromise}></Techs>
       </Suspense>
       <Footer></Footer>
     </>
