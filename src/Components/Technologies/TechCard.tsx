@@ -1,26 +1,31 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import type { TechType } from "../TechType";
 import { FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 interface TechCardProps {
     tech: TechType;
-    selectedTech: object[]
-    setSelectedTech: Dispatch<SetStateAction<object[]>>,
+    selectedTech: TechType[]
+    setSelectedTech: Dispatch<SetStateAction<TechType[]>>,
     count: number,
     setCount: Dispatch<SetStateAction<number>>
     //  Dispatch<SetStateAction<object[]>>
 }
 
 const TechCard = ({ tech, selectedTech, setSelectedTech, count, setCount }: TechCardProps) => {
-    const [isSelected, setIsSelected] = useState(false);
-    //console.log(isSelected, setIsSelected)
+    const isSelected = selectedTech.some((item) => item.id === tech.id);
+
     const handleSelectCart = () => {
-        setIsSelected(true)
-        setCount(count + 1)
+        if (isSelected) return;
+
+        setSelectedTech((prev) => {
+            if (prev.some((item) => item.id === tech.id)) return prev;
+            return [...prev, tech];
+        });
+        setCount((prev) => prev + 1);
         toast.success(`${tech.name} added to your stack!`);
     }
     return (
-        <div className="inter card">
+        <div className="w-full inter card">
             <div className={` border border-[#F1F5F9] w-[288px] h-64.25 rounded-[9px]  ${isSelected
                     ? "border-blue-500"
                     : "border-gray-200"

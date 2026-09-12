@@ -7,11 +7,11 @@ interface AvailableTechProps{
     count:number,
     setCount:Dispatch<SetStateAction<number>>,
     selectedTech:TechType[]
-    setSelectedTech:Dispatch<SetStateAction<object[]>>
+    setSelectedTech:Dispatch<SetStateAction<TechType[]>>
 }
 const AvailableTech = ({ techs,selectedTech,setSelectedTech,count,setCount}:AvailableTechProps) => {
     //console.log(techs, 'techs from available techs')
-    console.log(count,setCount, 'from available players')
+    //console.log(count,setCount, 'from available players')
     return (
         <div className="inter cards w-226">
         <div className="card-container grid grid-cols-3 gap-x-0.5 gap-y-0.5">

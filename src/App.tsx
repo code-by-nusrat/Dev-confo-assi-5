@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar'
 import Techs from './Components/Technologies/Techs'
 import './index.css'
 import type { TechType } from './Components/TechType'
+import Footer from './Components/Footer'
 
 
 const techsPromise =async():Promise<TechType[]>=>{
@@ -21,6 +22,7 @@ function App() {
       <Suspense fallback={<h2>Loading...</h2>}>
       <Techs techsPromise={techsPromise()}></Techs>
       </Suspense>
+      <Footer></Footer>
     </>
   )
 }

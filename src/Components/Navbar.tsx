@@ -4,12 +4,12 @@ import { IoMenuSharp } from "react-icons/io5";
 
 const Navbar = () => {
     return (
-        <nav className='inter w-full body flex justify-between items-center'>
-            <div className='flex items-center gap-34'>
+        <nav className='sticky top-0 z-50 bg-white inter w-full body flex items-center justify-between h-12.5'>
+            <div className=' flex justify-between items-center gap-20'>
                 <button className="md:hidden">
                     <IoMenuSharp className='text-3xl' />
                 </button>
-                <img src={Logo}alt="" />
+                <img className=' mr-4' src={Logo}alt="" />
             </div>
             <div className=" hidden md:flex list-none items-center font-medium text-[1rem] text-[#475569] gap-7">
                 
