@@ -2,6 +2,12 @@
 
 DevStack is a developer-focused website that showcases useful technologies, tools, and resources for modern web development. Users can explore different technologies and select the technologies they want to add to their personal stack.
 
+🔗 Live Project
+https://dev-confo-assign-5.netlify.app/
+
+💻 GitHub Repository
+https://github.com/code-by-nusrat/Dev-confo-assi-5
+
 📝 About The Project
 
 DevStack is a responsive React application built to practice React, TypeScript, component-based development, state management, and working with JSON data.
